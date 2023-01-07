@@ -1,8 +1,18 @@
-import './App.css';
-import Route from './routes'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Funcionario from "./pages/funcionario";
+import Home from "./pages/home";
 
-const App = () => {
-  return <Route />
+
+function App() {
+  return (
+    //Rotas
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/funcionario" element={<Funcionario/>}/>
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;

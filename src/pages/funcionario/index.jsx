@@ -1,11 +1,10 @@
-import React from "react";
+import React from 'react';
 
-const Funcionario = () => {
-  return (
-    <div>
-      <p>Funcionario</p>
-    </div>
-  );
-};
+const Funcionario = () => (
+  <div>
+    <h1>cadastro de Funcionario</h1>
+    <p>Funcionario</p>
+  </div>
+);
 
 export default Funcionario;

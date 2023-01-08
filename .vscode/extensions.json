@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "skyran.js-jsx-snippets",
+    "chakrounanas.turbo-console-log"
+  ]
+}

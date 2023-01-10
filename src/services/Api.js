@@ -6,17 +6,17 @@ export default class Request {
 
   static GET(endPoint, URL) {
     if (URL !== undefined) {
-      return axios.get(`${URL}/${endPoint}`);
+      return axios.get(`${URL}`);
     }
-    return axios.get(`${BaseURL}/${endPoint}`);
+    return axios.get(`${BaseURL}${endPoint}`);
 
   }
 
   static POST(endPoint, payload, URL) {
     if (URL !== undefined) {
-      return axios.post(`${URL}/${endPoint}`, payload);
+      return axios.post(`${URL}`, payload);
     }
-    return axios.post(`${BaseURL}/${endPoint}`, payload);
+    return axios.post(`${BaseURL}${endPoint}`, payload);
 
   }
 }

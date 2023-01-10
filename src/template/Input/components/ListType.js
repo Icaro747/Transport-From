@@ -6,6 +6,7 @@ const listType = [
   'time',
   'email',
   'number',
+  'decimal',
   'password',
 ];
 

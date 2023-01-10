@@ -13,14 +13,25 @@ const Input = ({
   inputType,
   invalid,
   disabled,
+  mandatory,
+  maxTextSize,
 }) => (
   <div>
-    <label>{title}</label>
+    <label>
+      {title}
+      {mandatory && <span>*</span>}
+    </label>
     <input
       name={inputName}
-      type={inputType}
+      type={inputType === 'decimal' ? 'number' : inputType}
       value={value}
-      onChange={(e) => onChange(e.target.value)}
+      step={inputType === 'decimal' ? '0.01' : undefined}
+      onChange={(e) => {
+        const newValue = e.target.value;
+        if (newValue.toString().length <= maxTextSize || maxTextSize === -1) {
+          onChange(newValue);
+        }
+      }}
       disabled={disabled}
     />
   </div>
@@ -35,6 +46,8 @@ Input.propTypes = {
   inputType: PropTypes.oneOf(listType),
   invalid: PropTypes.bool,
   disabled: PropTypes.bool,
+  mandatory: PropTypes.bool,
+  maxTextSize: PropTypes.number,
 };
 
 Input.defaultProps = {
@@ -44,6 +57,8 @@ Input.defaultProps = {
   inputType: 'text',
   invalid: false,
   disabled: false,
+  mandatory: false,
+  maxTextSize: -1,
 };
 
 export default Input;

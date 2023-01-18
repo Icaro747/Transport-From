@@ -15,6 +15,12 @@ const Cabecalho = ({ paginaAtual }) => (
       <S.Rota to="/funcionario" paginaAtual={paginaAtual === 'funcionario'}>
         Funcionario
       </S.Rota>
+      <S.Rota to="/financiamento" paginaAtual={paginaAtual === 'financiamento'}>
+        Financiamento
+      </S.Rota>
+      <S.Rota to="/seguro" paginaAtual={paginaAtual === 'seguro'}>
+        Seguro
+      </S.Rota>
     </S.Lista>
   </S.Cabecalho>
 );

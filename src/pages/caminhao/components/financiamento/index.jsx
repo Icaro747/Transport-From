@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-
+import * as S from './style';
 import Input from '../../../../template/Input';
 import Request from '../../../../services/Api';
 import Convert from '../../../../utils/convert';
+import Cabecalho from '../../../../template/cabecalho';
 
 const Financiamento = ({ id }) => {
   const [Financiador, setFinanciador] = useState('');
@@ -43,11 +44,12 @@ const Financiamento = ({ id }) => {
   };
 
   return (
-    <section>
+    <>
+      <Cabecalho />
       {id !== '' && (
         <div>
           <form onSubmit={CadastraFinanciamento}>
-            <h1>Cadastro de financiamento</h1>
+            <S.Titulo>Cadastro de Financiamento</S.Titulo>
             <Input
               title="Financiador"
               value={Financiador}
@@ -102,11 +104,15 @@ const Financiamento = ({ id }) => {
               mandatory
               disabled={Disabled}
             />
-            <button type="submit">Cadastra Financiamento</button>
+            <S.DivBotaoCadastrar>
+              <S.BotacaoCadastrar type="submit">
+                Cadastra Financiamento
+              </S.BotacaoCadastrar>
+            </S.DivBotaoCadastrar>
           </form>
         </div>
       )}
-    </section>
+    </>
   );
 };
 

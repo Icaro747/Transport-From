@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import Financiamento from './components/financiamento';
-import Seguro from './components/seguro';
+// import Financiamento from './components/financiamento';
+// import Seguro from './components/seguro';
 
 import Input from '../../template/Input';
 import Request from '../../services/Api';
@@ -131,8 +131,8 @@ const caminhao = () => {
           </S.DivBotaoCadastrar>
         </form>
       </div>
-      <Financiamento id={IdCaminhao} />
-      <Seguro id={IdCaminhao} />
+      {/* <Financiamento id={IdCaminhao} />
+      <Seguro id={IdCaminhao} /> */}
     </>
   );
 };

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-
+import * as S from './style';
 import Input from '../../../../template/Input';
 import Request from '../../../../services/Api';
 import Convert from '../../../../utils/convert';
+import Cabecalho from '../../../../template/cabecalho';
 
 const Seguro = ({ id }) => {
   const [Numero, setNumero] = useState('');
@@ -36,11 +37,12 @@ const Seguro = ({ id }) => {
   };
 
   return (
-    <section>
+    <>
+      <Cabecalho />
       {id !== '' && (
         <div>
           <form onSubmit={CadastraSeguro}>
-            <h1>Cadastro de Seguro</h1>
+            <S.Titulo>Cadastro de Seguro</S.Titulo>
             <Input
               title="Numero do seguro"
               value={Numero}
@@ -63,11 +65,13 @@ const Seguro = ({ id }) => {
               mandatory
               disabled={Disabled}
             />
-            <button type="submit">Cadastra</button>
+            <S.DivBotaoCadastrar>
+              <S.BotacaoCadastrar type="submit">Cadastrar</S.BotacaoCadastrar>
+            </S.DivBotaoCadastrar>
           </form>
         </div>
       )}
-    </section>
+    </>
   );
 };
 

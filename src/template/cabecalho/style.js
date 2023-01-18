@@ -14,7 +14,7 @@ export const Lista = styled.ul`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 10px;
+  gap: 30px;
   cursor: pointer;
   :hover {
     color: white;

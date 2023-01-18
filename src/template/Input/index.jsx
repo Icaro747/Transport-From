@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import * as S from './style';
 import listType from './components/ListType';
 
 const Input = ({
@@ -16,25 +16,27 @@ const Input = ({
   mandatory,
   maxTextSize,
 }) => (
-  <div>
-    <label>
-      {title}
-      {mandatory && <span>*</span>}
-    </label>
-    <input
-      name={inputName}
-      type={inputType === 'decimal' ? 'number' : inputType}
-      value={value}
-      step={inputType === 'decimal' ? '0.01' : undefined}
-      onChange={(e) => {
-        const newValue = e.target.value;
-        if (newValue.toString().length <= maxTextSize || maxTextSize === -1) {
-          onChange(newValue);
-        }
-      }}
-      disabled={disabled}
-    />
-  </div>
+  <S.DivOne>
+    <S.DivBox>
+      <S.LabelInput>
+        {title}
+        {mandatory && <span>*</span>}
+      </S.LabelInput>
+      <S.InputGeral
+        name={inputName}
+        type={inputType === 'decimal' ? 'number' : inputType}
+        value={value}
+        step={inputType === 'decimal' ? '0.01' : undefined}
+        onChange={(e) => {
+          const newValue = e.target.value;
+          if (newValue.toString().length <= maxTextSize || maxTextSize === -1) {
+            onChange(newValue);
+          }
+        }}
+        disabled={disabled}
+      />
+    </S.DivBox>
+  </S.DivOne>
 );
 
 Input.propTypes = {

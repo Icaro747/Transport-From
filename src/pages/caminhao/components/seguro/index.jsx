@@ -40,7 +40,7 @@ const Seguro = ({ id }) => {
       {id !== '' && (
         <div>
           <form onSubmit={CadastraSeguro}>
-            <h1>Cadastro de seguro</h1>
+            <h1>Cadastro de Seguro</h1>
             <Input
               title="Numero do seguro"
               value={Numero}

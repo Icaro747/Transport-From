@@ -6,6 +6,9 @@ import Seguro from './components/seguro';
 import Input from '../../template/Input';
 import Request from '../../services/Api';
 
+import * as S from './style';
+import Cabecalho from '../../template/cabecalho';
+
 const caminhao = () => {
   const [Nome, setNome] = useState('');
   const [Placa, setPlaca] = useState('');
@@ -70,63 +73,64 @@ const caminhao = () => {
 
   return (
     <>
-      <section>
-        <div>
-          <form onSubmit={Cadastra}>
-            <h1>Cadastro de caminha</h1>
-            <Input
-              title="Apelido do caminha"
-              value={Nome}
-              onChange={setNome}
-              mandatory
-              disabled={Disabled}
-            />
-            <Input
-              title="Placa"
-              value={Placa}
-              onChange={setPlaca}
-              mandatory
-              disabled={Disabled}
-            />
-            <Input
-              title="OmnLink"
-              value={OmnLink}
-              onChange={setOmnLink}
-              mandatory
-              disabled={Disabled}
-            />
-            <Input
-              title="Crv"
-              value={Crv}
-              onChange={setCrv}
-              mandatory
-              disabled={Disabled}
-            />
-            <Input
-              title="Tipo"
-              value={Tipo}
-              onChange={setTipo}
-              mandatory
-              disabled={Disabled}
-            />
-            <Input
-              title="Capacidade"
-              value={Capacidade}
-              onChange={setCapacidade}
-              inputType="number"
-              mandatory
-              disabled={Disabled}
-            />
-            <Input
-              title="Descrição"
-              value={Discricao}
-              onChange={setDiscricao}
-              disabled={Disabled}
-            />
-            <button type="submit">Cadastra</button>
-          </form>
-        </div>
-      </section>
+      <Cabecalho />
+      <div>
+        <form onSubmit={Cadastra}>
+          <S.Titulo>Cadastro de caminhão</S.Titulo>
+          <Input
+            title="Apelido do caminhão"
+            value={Nome}
+            onChange={setNome}
+            mandatory
+            disabled={Disabled}
+          />
+          <Input
+            title="Placa"
+            value={Placa}
+            onChange={setPlaca}
+            mandatory
+            disabled={Disabled}
+          />
+          <Input
+            title="OmnLink"
+            value={OmnLink}
+            onChange={setOmnLink}
+            mandatory
+            disabled={Disabled}
+          />
+          <Input
+            title="Crv"
+            value={Crv}
+            onChange={setCrv}
+            mandatory
+            disabled={Disabled}
+          />
+          <Input
+            title="Tipo"
+            value={Tipo}
+            onChange={setTipo}
+            mandatory
+            disabled={Disabled}
+          />
+          <Input
+            title="Capacidade"
+            value={Capacidade}
+            onChange={setCapacidade}
+            inputType="number"
+            mandatory
+            disabled={Disabled}
+          />
+          <Input
+            title="Descrição"
+            value={Discricao}
+            onChange={setDiscricao}
+            disabled={Disabled}
+          />
+          <S.DivBotaoCadastrar>
+            <S.BotacaoCadastrar type="submit">Cadastra</S.BotacaoCadastrar>
+          </S.DivBotaoCadastrar>
+        </form>
+      </div>
       <Financiamento id={IdCaminhao} />
       <Seguro id={IdCaminhao} />
     </>

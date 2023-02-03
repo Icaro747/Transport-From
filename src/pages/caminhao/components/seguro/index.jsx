@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import * as S from './style';
+import * as S from '../../style';
 import Input from '../../../../template/Input';
 import Request from '../../../../services/Api';
 import Convert from '../../../../utils/convert';
-import Cabecalho from '../../../../template/cabecalho';
+// import Cabecalho from '../../../../template/cabecalho';
 
 const Seguro = ({ id }) => {
   const [Numero, setNumero] = useState('');
@@ -38,39 +38,37 @@ const Seguro = ({ id }) => {
 
   return (
     <>
-      <Cabecalho />
-      {id !== '' && (
-        <div>
-          <form onSubmit={CadastraSeguro}>
-            <S.Titulo>Cadastro de Seguro</S.Titulo>
-            <Input
-              title="Numero do seguro"
-              value={Numero}
-              onChange={setNumero}
-              mandatory
-              disabled={Disabled}
-            />
-            <Input
-              title="Valor Messal"
-              value={Valor}
-              onChange={setValor}
-              mandatory
-              disabled={Disabled}
-            />
-            <Input
-              title="Data Vencimento"
-              value={DataVencimento}
-              onChange={setDataVencimento}
-              inputType="date"
-              mandatory
-              disabled={Disabled}
-            />
-            <S.DivBotaoCadastrar>
-              <S.BotacaoCadastrar type="submit">Cadastrar</S.BotacaoCadastrar>
-            </S.DivBotaoCadastrar>
-          </form>
-        </div>
-      )}
+      {/* <Cabecalho /> */}
+      <div>
+        <form onSubmit={CadastraSeguro}>
+          <S.Titulo>Cadastro de Seguro</S.Titulo>
+          <Input
+            title="Numero do seguro"
+            value={Numero}
+            onChange={setNumero}
+            mandatory
+            disabled={Disabled}
+          />
+          <Input
+            title="Valor Messal"
+            value={Valor}
+            onChange={setValor}
+            mandatory
+            disabled={Disabled}
+          />
+          <Input
+            title="Data Vencimento"
+            value={DataVencimento}
+            onChange={setDataVencimento}
+            inputType="date"
+            mandatory
+            disabled={Disabled}
+          />
+          <S.DivBotaoCadastrar>
+            <S.BotacaoCadastrar type="submit">Cadastrar</S.BotacaoCadastrar>
+          </S.DivBotaoCadastrar>
+        </form>
+      </div>
     </>
   );
 };

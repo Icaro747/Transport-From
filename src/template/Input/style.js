@@ -1,24 +1,20 @@
 import styled from 'styled-components';
 
 export const InputGeral = styled.input`
-  font-size: 25px;
+  padding: 10px;
+  outline: 25;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #00000030;
+  outline: 0;
   width: 100%;
-  padding: 20px 5px 5px;
-  background-color: #d5d5d5;
-  border: none;
-  border-radius: 4px;
-  margin: 10px;
 `;
 
 export const LabelInput = styled.label`
-  font-size: 22px;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
+  font-weight: bold;
 `;
 
-export const DivOne = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -27,9 +23,12 @@ export const DivOne = styled.div`
   position: relative;
 `;
 
-export const DivBox = styled.div`
+export const Box = styled.div`
   display: flex;
+  width: 100%;
   align-items: center;
   margin: 20px;
+  display: flex;
   gap: 10px;
+  flex-direction: column;
 `;

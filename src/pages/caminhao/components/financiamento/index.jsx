@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import * as S from './style';
 import Input from '../../../../template/Input';
 import Request from '../../../../services/Api';
 import Convert from '../../../../utils/convert';
-import Cabecalho from '../../../../template/cabecalho';
+// import Cabecalho from '../../../../template/cabecalho';
+import * as S from '../../style';
 
-const Financiamento = ({ id }) => {
+const Financiamento = ({ id, Proximo }) => {
   const [Financiador, setFinanciador] = useState('');
   const [Banco, setBanco] = useState('');
   const [ValorTotal, setValorTotal] = useState(0);
@@ -45,79 +45,78 @@ const Financiamento = ({ id }) => {
 
   return (
     <>
-      <Cabecalho />
-      {id !== '' && (
-        <div>
-          <form onSubmit={CadastraFinanciamento}>
-            <S.Titulo>Cadastro de Financiamento</S.Titulo>
-            <Input
-              title="Financiador"
-              value={Financiador}
-              onChange={setFinanciador}
-              mandatory
-              disabled={Disabled}
-            />
-            <Input
-              title="Banco"
-              value={Banco}
-              onChange={setBanco}
-              mandatory
-              disabled={Disabled}
-            />
-            <Input
-              title="Valor Total"
-              value={ValorTotal}
-              onChange={setValorTotal}
-              inputType="decimal"
-              mandatory
-              disabled={Disabled}
-            />
-            <Input
-              title="Valor Mensal"
-              value={ValorMensal}
-              onChange={setValorMensal}
-              inputType="decimal"
-              mandatory
-              disabled={Disabled}
-            />
-            <Input
-              title="Valor Pago"
-              value={ValorPago}
-              onChange={setValorPago}
-              inputType="decimal"
-              mandatory
-              disabled={Disabled}
-            />
-            <Input
-              title="Qtd Parcelas"
-              value={QtdParcelas}
-              onChange={setQtdParcelas}
-              inputType="number"
-              mandatory
-              disabled={Disabled}
-            />
-            <Input
-              title="Data Inicio"
-              value={DataInicio}
-              onChange={setDataInicio}
-              inputType="date"
-              mandatory
-              disabled={Disabled}
-            />
-            <S.DivBotaoCadastrar>
-              <S.BotacaoCadastrar type="submit">
-                Cadastra Financiamento
-              </S.BotacaoCadastrar>
-            </S.DivBotaoCadastrar>
-          </form>
-        </div>
-      )}
+      {/* <Cabecalho /> */}
+      <div>
+        <form onSubmit={CadastraFinanciamento}>
+          <S.Titulo>Cadastro de Financiamento</S.Titulo>
+          <Input
+            title="Financiador"
+            value={Financiador}
+            onChange={setFinanciador}
+            mandatory
+            disabled={Disabled}
+          />
+          <Input
+            title="Banco"
+            value={Banco}
+            onChange={setBanco}
+            mandatory
+            disabled={Disabled}
+          />
+          <Input
+            title="Valor Total"
+            value={ValorTotal}
+            onChange={setValorTotal}
+            inputType="decimal"
+            mandatory
+            disabled={Disabled}
+          />
+          <Input
+            title="Valor Mensal"
+            value={ValorMensal}
+            onChange={setValorMensal}
+            inputType="decimal"
+            mandatory
+            disabled={Disabled}
+          />
+          <Input
+            title="Valor Pago"
+            value={ValorPago}
+            onChange={setValorPago}
+            inputType="decimal"
+            mandatory
+            disabled={Disabled}
+          />
+          <Input
+            title="Qtd Parcelas"
+            value={QtdParcelas}
+            onChange={setQtdParcelas}
+            inputType="number"
+            mandatory
+            disabled={Disabled}
+          />
+          <Input
+            title="Data Inicio"
+            value={DataInicio}
+            onChange={setDataInicio}
+            inputType="date"
+            mandatory
+            disabled={Disabled}
+          />
+          <S.DivBotaoCadastrar>
+            <S.BotacaoCadastrar onClick={Proximo}>
+              Cadastrar Financiamento
+            </S.BotacaoCadastrar>
+          </S.DivBotaoCadastrar>
+        </form>
+      </div>
     </>
   );
 };
 
 Financiamento.propTypes = {
   id: PropTypes.string.isRequired,
+  Proximo: PropTypes.func.isRequired,
 };
 
 export default Financiamento;

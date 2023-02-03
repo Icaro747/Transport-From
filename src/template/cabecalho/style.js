@@ -22,6 +22,7 @@ export const Lista = styled.ul`
 `;
 
 export const Rota = styled(Link)`
+  font-weight: bold;
   text-decoration: none;
   color: white;
   transition: 0.3s;

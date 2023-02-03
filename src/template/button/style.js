@@ -1,11 +1,7 @@
 import styled from 'styled-components';
+// import * as C from '../../assets/color';
 
-export const Titulo = styled.h1`
-  font-size: 25px;
-  margin: 30px;
-`;
-
-export const BotacaoCadastrar = styled.button`
+export const ButtonPrimario = styled.button`
   box-sizing: border-box;
   appearance: none;
   background-color: transparent;
@@ -27,10 +23,6 @@ export const BotacaoCadastrar = styled.button`
   text-transform: uppercase;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  :hover {
-    color: black;
-    outline: 0;
-  }
   :focus {
     color: black;
     outline: 0;
@@ -42,12 +34,17 @@ export const BotacaoCadastrar = styled.button`
   transition: all 150ms ease-in-out;
   :hover {
     box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+    color: black;
   }
 `;
 
-export const DivBotaoCadastrar = styled.div`
+export const Lista = styled.ul`
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  margin-top: 25px;
+  gap: 30px;
+  cursor: pointer;
+  :hover {
+    color: white;
+  }
 `;

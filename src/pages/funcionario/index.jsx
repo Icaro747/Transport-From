@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Input from '../../template/Input';
 import Cabecalho from '../../template/cabecalho';
 import * as S from './style';
+import * as B from '../../template/button/style';
+import Mask from '../../utils/mask';
 
 const Funcionario = () => {
   const [Nome, setNome] = useState('');
@@ -38,58 +40,60 @@ const Funcionario = () => {
   return (
     <>
       <Cabecalho />
-      <div>
-        <form onSubmit={CadastraFinanciamento}>
+      <S.Container>
+        <div>
           <S.Titulo>Cadastro de Funcionario</S.Titulo>
-          <Input
-            title="Nome"
-            value={Nome}
-            onChange={setNome}
-            mandatory
-            disabled={Disabled}
-          />
-          <Input
-            title="Sobre Nome"
-            value={Sobrenome}
-            onChange={setSobreNome}
-            mandatory
-            disabled={Disabled}
-          />
-          <Input
-            title="Telefone"
-            value={Telefone}
-            onChange={setTelefone}
-            inputType="decimal"
-            mandatory
-            disabled={Disabled}
-          />
-          <Input
-            title="E-mail"
-            value={Email}
-            onChange={setEmail}
-            mandatory
-            disabled={Disabled}
-          />
-          <Input
-            title="Cargo"
-            value={Cargo}
-            onChange={setCargo}
-            mandatory
-            disabled={Disabled}
-          />
-          <Input
-            title="Salário"
-            value={Salario}
-            onChange={setSalario}
-            inputType="number"
-            mandatory
-            disabled={Disabled}
-          />
-          <S.DivBotaoCadastrar>
-            <S.BotacaoCadastrar type="submit">Cadastrar</S.BotacaoCadastrar>
-          </S.DivBotaoCadastrar>
-        </form>
-      </div>
+          <form onSubmit={CadastraFinanciamento}>
+            <Input
+              title="Nome"
+              value={Nome}
+              onChange={setNome}
+              mandatory
+              disabled={Disabled}
+            />
+            <Input
+              title="Sobre Nome"
+              value={Sobrenome}
+              onChange={setSobreNome}
+              mandatory
+              disabled={Disabled}
+            />
+            <Input
+              title="Telefone"
+              value={Telefone}
+              onChange={(e) => setTelefone(Mask.tel(e))}
+              inputType="decimal"
+              mandatory
+              disabled={Disabled}
+            />
+            <Input
+              title="E-mail"
+              value={Email}
+              onChange={setEmail}
+              mandatory
+              disabled={Disabled}
+            />
+            <Input
+              title="Cargo"
+              value={Cargo}
+              onChange={setCargo}
+              mandatory
+              disabled={Disabled}
+            />
+            <Input
+              title="Salário"
+              value={Salario}
+              onChange={setSalario}
+              inputType="number"
+              mandatory
+              disabled={Disabled}
+            />
+            <S.DivBotaoCadastrar>
+              <B.ButtonPrimario type="submit">Cadastrar</B.ButtonPrimario>
+            </S.DivBotaoCadastrar>
+          </form>
+        </div>
+      </S.Container>
     </>
   );
 };

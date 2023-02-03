@@ -16,8 +16,8 @@ const Input = ({
   mandatory,
   maxTextSize,
 }) => (
-  <S.DivOne>
-    <S.DivBox>
+  <S.Container>
+    <S.Box>
       <S.LabelInput>
         {title}
         {mandatory && <span>*</span>}
@@ -35,8 +35,8 @@ const Input = ({
         }}
         disabled={disabled}
       />
-    </S.DivBox>
-  </S.DivOne>
+    </S.Box>
+  </S.Container>
 );
 
 Input.propTypes = {

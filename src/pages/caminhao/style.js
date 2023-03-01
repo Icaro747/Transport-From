@@ -50,6 +50,7 @@ export const BotacaoCadastrar = styled.button`
 
 export const BoxCentralizacao = styled.div`
   width: 80%;
+  margin: 20px;
 `;
 
 export const DivBotaoCadastrar = styled.div`
@@ -80,11 +81,10 @@ export const Divisor = styled.div`
   width: 0%;
   overflow: hidden;
   transition: all 0.5s;
-  ${({ ativo }) =>
-    ativo &&
-    css`
+  margin: 0px;
+  ${({ ativo }) => ativo && css`
       width: 100%;
-    `}
+  `}
 `;
 
 export const BoxMasterDivisor = styled.div`
@@ -98,4 +98,11 @@ export const BoxMasterDivisor = styled.div`
 export const Formulario = styled.form`
   margin: auto;
   width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+`;
+
+export const Corpo = styled.div`
+  margin: 0px;
 `;

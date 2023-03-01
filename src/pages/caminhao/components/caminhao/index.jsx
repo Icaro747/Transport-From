@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+
 import Input from '../../../../template/Input';
 import Request from '../../../../services/Api';
 import * as B from '../../../../template/button/style';
@@ -66,7 +67,7 @@ const FormularioCaminhao = ({ setIdCaminhao, Proximo }) => {
   };
 
   return (
-    <div>
+    <S.Corpo>
       <S.Titulo>Cadastro de caminhão</S.Titulo>
       <S.Formulario onSubmit={Cadastra}>
         <Input
@@ -122,7 +123,7 @@ const FormularioCaminhao = ({ setIdCaminhao, Proximo }) => {
           <B.ButtonPrimario onClick={Proximo}>Cadastrar</B.ButtonPrimario>
         </S.DivBotaoCadastrar>
       </S.Formulario>
-    </div>
+    </S.Corpo>
   );
 };
 

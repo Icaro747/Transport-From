@@ -28,15 +28,32 @@ export const BoxText = styled.div`
   font-weight: bold;
   z-index: 1;
   background: white;
-  ${({ posicaoAtual }) =>
-    posicaoAtual &&
-    css`
-      color: red;
-    `}
+  margin: 0px;
 `;
 
 export const BarraProgresso = styled.div`
   height: 10px;
-  background-color: black;
+  width: 0%;
+  ${({ progreco }) => progreco && css`
+    width: ${progreco}%;
+  `}
+  background: aliceblue;
+  position: absolute;
+  transition: all 0.5s;
+`;
+
+
+export const Barra = styled.div`
+  height: 10px;
+  background-color: darkgrey;
+  width: 100%;
+  position: absolute;
+`;
+
+export const CorpoBarra = styled.div`
   width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
 `;

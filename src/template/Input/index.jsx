@@ -16,32 +16,30 @@ const Input = ({
   mandatory,
   maxTextSize,
 }) => (
-  <S.Container>
-    <S.Box>
-      <S.LabelInput>
-        {title}
-        {mandatory && <span>*</span>}
-      </S.LabelInput>
-      <S.InputGeral
-        name={inputName}
-        type={inputType === 'decimal' ? 'number' : inputType}
-        value={value}
-        step={inputType === 'decimal' ? '0.01' : undefined}
-        onChange={(e) => {
-          const newValue = e.target.value;
-          if (newValue.toString().length <= maxTextSize || maxTextSize === -1) {
-            onChange(newValue);
-          }
-        }}
-        disabled={disabled}
-      />
-    </S.Box>
-  </S.Container>
+  <S.Box>
+    <S.LabelInput>
+      {title}
+      {mandatory && <span> *</span>}
+    </S.LabelInput>
+    <S.InputGeral
+      name={inputName}
+      type={inputType === 'decimal' ? 'number' : inputType}
+      value={value}
+      step={inputType === 'decimal' ? '0.01' : undefined}
+      onChange={(e) => {
+        const newValue = e.target.value;
+        if (newValue.toString().length <= maxTextSize || maxTextSize === -1) {
+          onChange(newValue);
+        }
+      }}
+      disabled={disabled}
+    />
+  </S.Box>
 );
 
 Input.propTypes = {
   title: PropTypes.string.isRequired,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   onChange: PropTypes.func.isRequired,
   size: PropTypes.number,
   inputName: PropTypes.string,
@@ -53,7 +51,6 @@ Input.propTypes = {
 };
 
 Input.defaultProps = {
-  value: '',
   size: 150,
   inputName: undefined,
   inputType: 'text',

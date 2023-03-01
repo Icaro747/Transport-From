@@ -12,23 +12,17 @@ export const InputGeral = styled.input`
 
 export const LabelInput = styled.label`
   font-weight: bold;
-`;
-
-export const Container = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
+  margin: 0px;
+  padding-left: 10px;
+  span{
+    color: red;
+  }
 `;
 
 export const Box = styled.div`
-  display: flex;
   width: 100%;
-  align-items: center;
-  margin: 20px;
   display: flex;
-  gap: 10px;
+  align-items: flex-start;
   flex-direction: column;
+  gap: 10px;
 `;
